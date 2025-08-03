@@ -1,0 +1,562 @@
+[
+  {
+    "id": "1",
+    "name": "Everest Base Camp",
+    "slug": "everest-base-camp",
+    "category": "Cultural Tour",
+    "difficulty": "Easy",
+    "guideName": "Pema Lama",
+    "languages": ["English"],
+    "duration": "7 days",
+    "price": 735,
+    "location": "Nepal",
+    "latitude": 27.9881,
+    "longitude": 86.925,
+    "rating": 4.4,
+    "description": "Everest Base Camp is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Panoramic mountain vistas",
+      "Tea house accommodations",
+      "Close-up glacier views",
+      "Thrilling suspension bridges"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/30439897/pexels-photo-30439897.jpeg",
+      "https://images.pexels.com/photos/943538/pexels-photo-943538.jpeg",
+      "https://images.pexels.com/photos/25245166/pexels-photo-25245166.jpeg",
+      "https://images.pexels.com/photos/11608630/pexels-photo-11608630.jpeg"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Annapurna Circuit",
+    "slug": "annapurna-circuit",
+    "category": "Hiking",
+    "difficulty": "Moderate",
+    "guideName": "Lakpa Sherpa",
+    "languages": ["English"],
+    "duration": "6 days",
+    "price": 1412,
+    "location": "Nepal",
+    "latitude": 28.5983,
+    "longitude": 83.9311,
+    "rating": 4.4,
+    "description": "Annapurna Circuit is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Diverse landscapes",
+      "Apple orchards",
+      "Thorong La Pass crossing",
+      "Remote Tibetan villages"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/14136902/pexels-photo-14136902.jpeg",
+      "https://images.pexels.com/photos/4173624/pexels-photo-4173624.jpeg",
+      "https://images.pexels.com/photos/7412018/pexels-photo-7412018.jpeg",
+      "https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Pokhara City Tour",
+    "slug": "pokhara-city-tour",
+    "category": "Cultural Tour",
+    "difficulty": "Hard",
+    "guideName": "Sita Gurung",
+    "languages": ["English"],
+    "duration": "6 days",
+    "price": 302,
+    "location": "Nepal",
+    "latitude": 28.2096,
+    "longitude": 83.9856,
+    "rating": 4.5,
+    "description": "Pokhara City Tour is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Boat ride in Phewa Lake",
+      "Visit to Davis Falls",
+      "Peace Pagoda hike",
+      "Street food experience"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/2226895/pexels-photo-2226895.jpeg",
+      "https://images.pexels.com/photos/15607830/pexels-photo-15607830.jpeg",
+      "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg",
+      "https://images.pexels.com/photos/4173615/pexels-photo-4173615.jpeg"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Chitwan Jungle Safari",
+    "slug": "chitwan-jungle-safari",
+    "category": "Wildlife Safari",
+    "difficulty": "Moderate",
+    "guideName": "Ram Khatri",
+    "languages": ["English", "Nepali"],
+    "duration": "13 days",
+    "price": 1434,
+    "location": "Nepal",
+    "latitude": 27.5291,
+    "longitude": 84.3542,
+    "rating": 4.4,
+    "description": "Chitwan Jungle Safari is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Elephant safari",
+      "Canoe ride",
+      "Tharu cultural dance",
+      "Bird watching in wetlands"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg",
+      "https://images.pexels.com/photos/3400792/pexels-photo-3400792.jpeg",
+      "https://images.pexels.com/photos/3661210/pexels-photo-3661210.jpeg",
+      "https://images.pexels.com/photos/4825706/pexels-photo-4825706.jpeg"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Lumbini Pilgrimage",
+    "slug": "lumbini-pilgrimage",
+    "category": "Trekking",
+    "difficulty": "Moderate",
+    "guideName": "Sita Gurung",
+    "languages": ["Nepali", "German"],
+    "duration": "13 days",
+    "price": 1249,
+    "location": "Nepal",
+    "latitude": 27.4712,
+    "longitude": 83.275,
+    "rating": 4.7,
+    "description": "Lumbini Pilgrimage is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Birthplace of Lord Buddha",
+      "Ashoka Pillar visit",
+      "Monastic zone exploration",
+      "Spiritual meditation session"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/5621244/pexels-photo-5621244.jpeg",
+      "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "https://images.pexels.com/photos/6249527/pexels-photo-6249527.jpeg",
+      "https://images.pexels.com/photos/5945883/pexels-photo-5945883.jpeg"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Langtang Valley Trek",
+    "slug": "langtang-valley-trek",
+    "category": "Trekking",
+    "difficulty": "Hard",
+    "guideName": "Mingma Tamang",
+    "languages": ["English"],
+    "duration": "5 days",
+    "price": 702,
+    "location": "Nepal",
+    "latitude": 28.2116,
+    "longitude": 85.5566,
+    "rating": 5.0,
+    "description": "Langtang Valley Trek is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Langtang National Park",
+      "Tamang culture",
+      "Langtang glacier visit",
+      "Snow-capped peaks view"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/1694980/pexels-photo-1694980.jpeg",
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+      "https://images.pexels.com/photos/1647179/pexels-photo-1647179.jpeg",
+      "https://images.pexels.com/photos/1450340/pexels-photo-1450340.jpeg"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Gosaikunda Lake Trek",
+    "slug": "gosaikunda-lake-trek",
+    "category": "Cultural Tour",
+    "difficulty": "Hard",
+    "guideName": "Mingma Tamang",
+    "languages": ["Nepali", "German"],
+    "duration": "9 days",
+    "price": 1044,
+    "location": "Nepal",
+    "latitude": 28.05,
+    "longitude": 85.42,
+    "rating": 5.0,
+    "description": "Gosaikunda Lake Trek is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Sacred alpine lake",
+      "Mountain reflections",
+      "Religious significance",
+      "Himalayan flora and fauna"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/2929336/pexels-photo-2929336.jpeg",
+      "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg",
+      "https://images.pexels.com/photos/1439066/pexels-photo-1439066.jpeg",
+      "https://images.pexels.com/photos/2662816/pexels-photo-2662816.jpeg"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Upper Mustang",
+    "slug": "upper-mustang",
+    "category": "Trekking",
+    "difficulty": "Hard",
+    "guideName": "Lakpa Sherpa",
+    "languages": ["English", "Nepali"],
+    "duration": "9 days",
+    "price": 658,
+    "location": "Nepal",
+    "latitude": 29.1795,
+    "longitude": 83.9636,
+    "rating": 4.7,
+    "description": "Upper Mustang is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Walled kingdom visit",
+      "Tibetan Buddhist monasteries",
+      "Wind-eroded canyons",
+      "Cave exploration"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg",
+      "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg",
+      "https://images.pexels.com/photos/7979589/pexels-photo-7979589.jpeg",
+      "https://images.pexels.com/photos/6249508/pexels-photo-6249508.jpeg"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Rara Lake Tour",
+    "slug": "rara-lake-tour",
+    "category": "Adventure",
+    "difficulty": "Hard",
+    "guideName": "Sita Gurung",
+    "languages": ["English"],
+    "duration": "13 days",
+    "price": 755,
+    "location": "Nepal",
+    "latitude": 29.5333,
+    "longitude": 82.0833,
+    "rating": 4.4,
+    "description": "Rara Lake Tour is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Rara Lake boating",
+      "Evergreen forest hike",
+      "Snow-capped peaks reflection",
+      "Horseback ride experience"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/3274644/pexels-photo-3274644.jpeg",
+      "https://images.pexels.com/photos/1870133/pexels-photo-1870133.jpeg",
+      "https://images.pexels.com/photos/2662816/pexels-photo-2662816.jpeg",
+      "https://images.pexels.com/photos/2179435/pexels-photo-2179435.jpeg"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Ilam Tea Garden Tour",
+    "slug": "ilam-tea-garden-tour",
+    "category": "Hiking",
+    "difficulty": "Moderate",
+    "guideName": "Ram Khatri",
+    "languages": ["English", "Hindi"],
+    "duration": "5 days",
+    "price": 543,
+    "location": "Nepal",
+    "latitude": 26.9111,
+    "longitude": 87.9258,
+    "rating": 4.8,
+    "description": "Ilam Tea Garden Tour is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Tea garden walk",
+      "View from Shree Antu Danda",
+      "Local tea tasting",
+      "Eastern hill landscape"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg",
+      "https://images.pexels.com/photos/4440651/pexels-photo-4440651.jpeg",
+      "https://images.pexels.com/photos/1555554/pexels-photo-1555554.jpeg",
+      "https://images.pexels.com/photos/6527036/pexels-photo-6527036.jpeg"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Bandipur Village Walk",
+    "slug": "bandipur-village-walk",
+    "category": "Wildlife Safari",
+    "difficulty": "Easy",
+    "guideName": "Ram Khatri",
+    "languages": ["English", "French"],
+    "duration": "13 days",
+    "price": 1155,
+    "location": "Nepal",
+    "latitude": 27.9387,
+    "longitude": 84.4185,
+    "rating": 5.0,
+    "description": "Bandipur Village Walk is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Stone-paved alleys",
+      "Newari architecture",
+      "Hilltop temple visit",
+      "Traditional handicrafts"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+      "https://images.pexels.com/photos/4173639/pexels-photo-4173639.jpeg",
+      "https://images.pexels.com/photos/4079463/pexels-photo-4079463.jpeg",
+      "https://images.pexels.com/photos/6249481/pexels-photo-6249481.jpeg"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Dhampus Trek",
+    "slug": "dhampus-trek",
+    "category": "Trekking",
+    "difficulty": "Hard",
+    "guideName": "Ram Khatri",
+    "languages": ["English", "Hindi"],
+    "duration": "12 days",
+    "price": 1394,
+    "location": "Nepal",
+    "latitude": 28.2878,
+    "longitude": 83.8295,
+    "rating": 4.7,
+    "description": "Dhampus Trek is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Short forest trek",
+      "Sunrise view of Annapurna",
+      "Interaction with locals",
+      "Peaceful rural setting"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/1687845/pexels-photo-1687845.jpeg",
+      "https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg",
+      "https://images.pexels.com/photos/3408731/pexels-photo-3408731.jpeg",
+      "https://images.pexels.com/photos/4173639/pexels-photo-4173639.jpeg"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Nagarkot Sunrise Tour",
+    "slug": "nagarkot-sunrise-tour",
+    "category": "Hiking",
+    "difficulty": "Moderate",
+    "guideName": "Lakpa Sherpa",
+    "languages": ["English", "Hindi"],
+    "duration": "6 days",
+    "price": 280,
+    "location": "Nepal",
+    "latitude": 27.7172,
+    "longitude": 85.52,
+    "rating": 4.5,
+    "description": "Nagarkot Sunrise Tour is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Sunrise over Himalayas",
+      "Panoramic tower",
+      "Short jungle walk",
+      "Quiet hill station"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/1647179/pexels-photo-1647179.jpeg",
+      "https://images.pexels.com/photos/1450340/pexels-photo-1450340.jpeg",
+      "https://images.pexels.com/photos/1647248/pexels-photo-1647248.jpeg",
+      "https://images.pexels.com/photos/1450339/pexels-photo-1450339.jpeg"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Poon Hill Trek",
+    "slug": "poon-hill-trek",
+    "category": "Wildlife Safari",
+    "difficulty": "Hard",
+    "guideName": "Mingma Tamang",
+    "languages": ["English", "French"],
+    "duration": "7 days",
+    "price": 994,
+    "location": "Nepal",
+    "latitude": 28.4,
+    "longitude": 83.6833,
+    "rating": 4.5,
+    "description": "Poon Hill Trek is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Ghorepani forest trail",
+      "Panoramic hilltop view",
+      "Village tea stops",
+      "Colorful rhododendron forests"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg",
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg",
+      "https://images.pexels.com/photos/1555554/pexels-photo-1555554.jpeg",
+      "https://images.pexels.com/photos/1450340/pexels-photo-1450340.jpeg"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Kalinchowk Snow Hike",
+    "slug": "kalinchowk-snow-hike",
+    "category": "Trekking",
+    "difficulty": "Moderate",
+    "guideName": "Ram Khatri",
+    "languages": ["English", "Hindi"],
+    "duration": "11 days",
+    "price": 1202,
+    "location": "Nepal",
+    "latitude": 27.6667,
+    "longitude": 86.05,
+    "rating": 4.5,
+    "description": "Kalinchowk Snow Hike is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Cable car to Kalinchowk",
+      "Hike through snow trails",
+      "Temple visit",
+      "Snow play experience"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/1679814/pexels-photo-1679814.jpeg",
+      "https://images.pexels.com/photos/1439066/pexels-photo-1439066.jpeg",
+      "https://images.pexels.com/photos/6249481/pexels-photo-6249481.jpeg",
+      "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Tansen Culture Tour",
+    "slug": "tansen-culture-tour",
+    "category": "Adventure",
+    "difficulty": "Easy",
+    "guideName": "Lakpa Sherpa",
+    "languages": ["English", "Nepali"],
+    "duration": "10 days",
+    "price": 1211,
+    "location": "Nepal",
+    "latitude": 27.8675,
+    "longitude": 83.546,
+    "rating": 4.5,
+    "description": "Tansen Culture Tour is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "View from Shreenagar Hill",
+      "Cultural museum tour",
+      "Old bazaar stroll",
+      "Friendly locals"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/4173639/pexels-photo-4173639.jpeg",
+      "https://images.pexels.com/photos/4079463/pexels-photo-4079463.jpeg",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg",
+      "https://images.pexels.com/photos/4173615/pexels-photo-4173615.jpeg"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Janakpur Dham Visit",
+    "slug": "janakpur-dham-visit",
+    "category": "Cultural Tour",
+    "difficulty": "Easy",
+    "guideName": "Pema Lama",
+    "languages": ["English", "French"],
+    "duration": "13 days",
+    "price": 1090,
+    "location": "Nepal",
+    "latitude": 26.7281,
+    "longitude": 85.9214,
+    "rating": 4.3,
+    "description": "Janakpur Dham Visit is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Visit Janaki Temple",
+      "Cultural heritage site",
+      "Maithili art & tradition",
+      "Local food tour"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "https://images.pexels.com/photos/6249481/pexels-photo-6249481.jpeg",
+      "https://images.pexels.com/photos/4079463/pexels-photo-4079463.jpeg",
+      "https://images.pexels.com/photos/5621244/pexels-photo-5621244.jpeg"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Bardia Wildlife Safari",
+    "slug": "bardia-wildlife-safari",
+    "category": "Cultural Tour",
+    "difficulty": "Moderate",
+    "guideName": "Mingma Tamang",
+    "languages": ["Nepali", "German"],
+    "duration": "8 days",
+    "price": 498,
+    "location": "Nepal",
+    "latitude": 28.35,
+    "longitude": 81.6,
+    "rating": 4.4,
+    "description": "Bardia Wildlife Safari is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Jeep safari ride",
+      "Tiger and rhino spotting",
+      "Nature walks",
+      "Tharu village life"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg",
+      "https://images.pexels.com/photos/3661210/pexels-photo-3661210.jpeg",
+      "https://images.pexels.com/photos/2179313/pexels-photo-2179313.jpeg",
+      "https://images.pexels.com/photos/4825706/pexels-photo-4825706.jpeg"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Dhulikhel Day Hike",
+    "slug": "dhulikhel-day-hike",
+    "category": "Hiking",
+    "difficulty": "Easy",
+    "guideName": "Sita Gurung",
+    "languages": ["English"],
+    "duration": "10 days",
+    "price": 788,
+    "location": "Nepal",
+    "latitude": 27.6228,
+    "longitude": 85.544,
+    "rating": 4.9,
+    "description": "Dhulikhel Day Hike is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Hiking from Banepa",
+      "Viewpoint picnic",
+      "Old town sightseeing",
+      "Green terraced hills"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/2929336/pexels-photo-2929336.jpeg",
+      "https://images.pexels.com/photos/3408731/pexels-photo-3408731.jpeg",
+      "https://images.pexels.com/photos/4079463/pexels-photo-4079463.jpeg",
+      "https://images.pexels.com/photos/6527036/pexels-photo-6527036.jpeg"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Khumai Danda Trek",
+    "slug": "khumai-danda-trek",
+    "category": "Trekking",
+    "difficulty": "Moderate",
+    "guideName": "Ram Khatri",
+    "languages": ["Nepali", "German"],
+    "duration": "13 days",
+    "price": 224,
+    "location": "Nepal",
+    "latitude": 28.3272,
+    "longitude": 84.0737,
+    "rating": 4.8,
+    "description": "Khumai Danda Trek is a popular destination in Nepal offering scenic views, cultural experiences, and adventure. This tour will take you through majestic landscapes, traditional villages, and serene natural beauty. Ideal for travelers looking to explore the heart of the Himalayas and immerse themselves in authentic Nepali culture.",
+    "highlights": [
+      "Hidden ridge trail",
+      "Unexplored scenic viewpoints",
+      "Campsite under stars",
+      "Local Magar hospitality"
+    ],
+    "images": [
+      "https://images.pexels.com/photos/1647248/pexels-photo-1647248.jpeg",
+      "https://images.pexels.com/photos/1450339/pexels-photo-1450339.jpeg",
+      "https://images.pexels.com/photos/2179435/pexels-photo-2179435.jpeg",
+      "https://images.pexels.com/photos/3408731/pexels-photo-3408731.jpeg"
+    ]
+  }
+]
