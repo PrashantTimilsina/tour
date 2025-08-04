@@ -1,23 +1,26 @@
-import tours from "@/files/tours.json";
+import { ITour } from "@/model/tourModel";
 import Image from "next/image";
 import Link from "next/link";
 
-function Home() {
+import { getAllTour } from "@/lib/TourData";
+
+async function TourCart() {
+  const tourss: ITour[] = await getAllTour();
   return (
     <div className="p-4">
       <h1 className="text-2xl text-center sm:pb-5  relative top-0 text-slate-700 pb-2 dark:text-slate-200">
         Explore Nepal's Hidden Wonders
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {tours.map((el, i) => (
+        {tourss.map((el, i) => (
           <div
             key={i}
             className="card w-full bg-base-100 shadow-md border border-gray-100 dark:bg-slate-600 dark:border-gray-500"
           >
             <figure className="relative w-full h-64">
               <Image
-                src={el.images[0]}
-                alt={el.name}
+                src={el.images?.[0]}
+                alt={el?.name || "Tour image"}
                 fill
                 className="object-cover rounded-t-lg"
               />
@@ -29,7 +32,7 @@ function Home() {
                   "No description."}
               </p>
               <div className="card-actions justify-end">
-                <Link href={`/description/${el.id}`}>
+                <Link href={`/description/${el._id}`}>
                   <button className="btn btn-primary">View Details</button>
                 </Link>
               </div>
@@ -41,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default TourCart;

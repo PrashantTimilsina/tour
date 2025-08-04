@@ -1,11 +1,11 @@
 import React from "react";
-import Home from "@/files/Home";
+import TourCart from "@/files/TourCart";
 import connect from "@/db/db";
 connect();
 function App() {
   return (
     <div>
-      <Home />
+      <TourCart />
     </div>
   );
 }

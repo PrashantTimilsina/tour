@@ -1,12 +1,12 @@
 import React from "react";
 type Props = {
   params: {
-    id: string;
+    id: string | Promise<{ id: string }>;
   };
 };
 async function Description({ params }: Props) {
-  const id = params.id;
-  return <div>{id}</div>;
+  const { id } = await params;
+  return <div>{id as string}</div>;
 }
 
 export default Description;

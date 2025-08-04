@@ -1,5 +1,5 @@
 import { models, model, Schema, Document } from "mongoose";
-interface ITour extends Document {
+export interface ITour extends Document {
   name?: string;
   slug?: string;
   category?: string;
