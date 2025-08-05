@@ -33,7 +33,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="antialiased">
+      <body className="antialiased w-full min-h-screen bg-[#F8FAFC] dark:bg-[#0F172B]">
         {" "}
         <ThemeProvider
           attribute="class"
@@ -43,7 +43,7 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            <main>
+            <main className="w-full min-h-screen">
               <SidebarTrigger />
               <ModeToggle />
               {children}
