@@ -62,7 +62,7 @@ function Description({ id }: Props) {
           </h3>
           <div className="flex gap-7">
             <h3 className="text-xl dark:text-slate-200 mt-5">
-              Rating: {tour?.rating}/5
+              Rating: {tour?.rating}⭐/5
             </h3>
             <h3 className="text-xl dark:text-slate-200 mt-5">
               Difficulty: {tour?.difficulty}
@@ -88,15 +88,23 @@ function Description({ id }: Props) {
               Rs {tour?.price}
             </span>
           </h1>
+          <div className="sm:text-xl flex sm:gap-7 mt-7 gap-4">
+            <button className="px-6 py-2 bg-sky-400 text-slate-100 rounded cursor-pointer">
+              Add to Wishlist
+            </button>
+            <button className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer">
+              Book tour
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-6 p-4 ml-7 text-xl">
+      <div className="mt-6 p-4 sm:ml-7 text-xl">
         <h3 className="text-2xl">Highlights</h3>
         <div className="flex gap-4 sm:flex-row flex-col">
           {tour?.highlights?.map((el, i) => (
             <span
               key={i}
-              className="mt-3 bg-blue-900 text-slate-200 px-2 py-1 rounded"
+              className="mt-3 bg-blue-900 text-slate-200 px-2 py-1 rounded inline-block"
             >
               {el}
             </span>

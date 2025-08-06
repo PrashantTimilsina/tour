@@ -12,7 +12,11 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  LogIn,
+  UserPlus,
 } from "lucide-react";
+
+import { useSession } from "next-auth/react"; // ✅ Add this
 
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
@@ -26,26 +30,15 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Tours",
-      logo: GalleryVerticalEnd,
-      plan: "@tours",
-    },
-  ],
-  navMain: [
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: session } = useSession(); // ✅ Access session
+
+  // Sidebar Nav Items based on login state
+  const navMain = [
     {
       title: "Home",
       url: "/",
       icon: SquareTerminal,
-      isActive: true,
     },
     {
       title: "Wishlist",
@@ -57,13 +50,29 @@ const data = {
       url: "/bookings",
       icon: BookOpen,
     },
-    {
-      title: "Profile",
-      url: "/profile",
-      icon: Settings2,
-    },
-  ],
-  projects: [
+    ...(session?.user
+      ? [
+          {
+            title: "Profile",
+            url: "/profile",
+            icon: Settings2,
+          },
+        ]
+      : [
+          {
+            title: "Login",
+            url: "/login",
+            icon: LogIn,
+          },
+          {
+            title: "Signup",
+            url: "/signup",
+            icon: UserPlus,
+          },
+        ]),
+  ];
+
+  const projects = [
     {
       name: "Popular Destinations",
       url: "/popular",
@@ -74,21 +83,35 @@ const data = {
       url: "/categories",
       icon: PieChart,
     },
-  ],
-};
+  ];
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher
+          teams={[
+            {
+              name: "Tours",
+              logo: GalleryVerticalEnd,
+              plan: "@tours",
+            },
+          ]}
+        />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain items={navMain} />
+        <NavProjects projects={projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {session?.user && (
+          <NavUser
+            user={{
+              name: session.user.name || "",
+              email: session.user.email || "",
+              avatar: session.user.image || "/avatars/default.png",
+            }}
+          />
+        )}
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
