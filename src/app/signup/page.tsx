@@ -7,14 +7,16 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import Link from "next/link";
-function Login() {
+function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to primary-100 flex items-center justify-center ">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
@@ -22,10 +24,10 @@ function Login() {
         <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6 dark:bg-gray-800">
           <div className="text-center space-y-2 ">
             <h1 className="text-3xl font-bold tracking-tighter">
-              Welcome back
+              Create your account
             </h1>
             <p className=" text-muted-foreground">
-              Enter your credentials to access your account
+              Fill in the details to create a new account
             </p>
           </div>
           <form className="space-y-4 ">
@@ -60,6 +62,26 @@ function Login() {
                 </button>
               </div>
             </div>
+            <div className="space-y-2">
+              <Label htmlFor="password">Confirm Password</Label>
+              <div className="relative">
+                <Input
+                  type={showConfirmPass ? "text" : "password"}
+                  id="password"
+                  value={confirmPassword}
+                  required
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="******"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPass(!showConfirmPass)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                >
+                  {showConfirmPass ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+            </div>
             <div className="flex items-center justify-between ">
               <div className="flex items-center space-x-2">
                 <Checkbox id="remember" />
@@ -73,7 +95,7 @@ function Login() {
               </a>
             </div>
             <Button type="submit" className="w-full">
-              Log In
+              Sign Up
             </Button>
           </form>
           <div className="relative">
@@ -97,12 +119,12 @@ function Login() {
             </Button>
           </div>
           <div className="text-center text-sm">
-            Don't have an account?{" "}
+            Already have an account?{" "}
             <Link
-              href="/signup"
+              href="/login"
               className="text-primary-500 hover:text-primary-600 font-medium"
             >
-              Sign up
+              Log in
             </Link>
           </div>
         </div>
@@ -111,4 +133,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

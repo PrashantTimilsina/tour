@@ -4,6 +4,7 @@ export interface IUser extends Document {
   name: string;
   email: string;
   password?: string;
+  image?: string;
   provider?: string;
 }
 const userSchema = new Schema<IUser>(
@@ -29,6 +30,7 @@ const userSchema = new Schema<IUser>(
         }
       },
     },
+    image: { type: String, required: false },
     provider: { type: String, required: true, default: "credentials" },
   },
   { timestamps: true }
