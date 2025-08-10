@@ -7,6 +7,12 @@ export async function GET(request: NextRequest) {
     const tour = await Tour.find();
     return NextResponse.json({ tour });
   } catch (error) {
-    return NextResponse.json({ message: error.message });
+    if (error instanceof Error) {
+      return NextResponse.json({ message: error.message });
+    }
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
