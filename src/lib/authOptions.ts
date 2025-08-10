@@ -4,6 +4,7 @@ import connect from "@/db/db";
 import User from "@/model/userModel";
 import bcrypt from "bcryptjs";
 import { AuthOptions } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
@@ -12,6 +13,10 @@ export const authOptions: AuthOptions = {
     Github({
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -42,14 +47,14 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async signIn({ account, profile }) {
-      if (account?.provider === "github") {
+      if (account?.provider === "github" || account?.provider === "google") {
         await connect();
         const existingUser = await User.findOne({ email: profile?.email });
         if (!existingUser) {
           await User.create({
             name: profile?.name,
             email: profile?.email,
-            image: profile?.image,
+
             provider: account?.provider,
           });
         }
@@ -61,7 +66,6 @@ export const authOptions: AuthOptions = {
         token.id = user.id.toString();
         token.email = user.email;
         token.name = user.name;
-        token.image = user.image;
       }
       return token;
     },
@@ -70,7 +74,7 @@ export const authOptions: AuthOptions = {
         session.user = {
           name: token?.name,
           email: token?.email,
-          image: token?.image as string,
+          image: token?.picture as string,
         };
       }
       return session;

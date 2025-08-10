@@ -7,12 +7,46 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import Link from "next/link";
+import axios, { AxiosError } from "axios";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 function Signup() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    const user = { name, email, password, confirmPassword };
+    e.preventDefault();
+    try {
+      await axios.post("/api/auth/signup", user);
+      await signIn("credentials", {
+        email: user.email,
+        password: user.password,
+        callbackUrl: "/",
+      });
+      alert("User created");
+      router.push("/");
+    } catch (error: unknown) {
+      const err = error as AxiosError<{ message: string }>;
+      if (err.response?.status === 400) {
+        alert("Invalid credentials");
+      } else {
+        alert("server error");
+        console.log(err);
+      }
+    }
+  };
+  const handleProvider = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    value: "github" | "google"
+  ) => {
+    e.preventDefault();
+    signIn(value, { callbackUrl: "/" });
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to primary-100 flex items-center justify-center ">
       <motion.div
@@ -30,7 +64,18 @@ function Signup() {
               Fill in the details to create a new account
             </p>
           </div>
-          <form className="space-y-4 ">
+          <form className="space-y-4 " onSubmit={handleSubmit}>
+            <div className="space-y-2 ">
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="username"
+                value={name}
+                required
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
             <div className="space-y-2 ">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -63,11 +108,11 @@ function Signup() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Confirm Password</Label>
+              <Label htmlFor="confirmpass">Confirm Password</Label>
               <div className="relative">
                 <Input
                   type={showConfirmPass ? "text" : "password"}
-                  id="password"
+                  id="confirmpass"
                   value={confirmPassword}
                   required
                   onChange={(e) => setConfirmPassword(e.target.value)}
@@ -109,11 +154,19 @@ function Signup() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" className="w-full">
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={(e) => handleProvider(e, "github")}
+            >
               <Github className="mr-2 h-4 w-4" />
               Github
             </Button>
-            <Button variant="outline" className="w-full">
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={(e) => handleProvider(e, "google")}
+            >
               <Mail className="mr-2 h-4 w-4" />
               Google
             </Button>
