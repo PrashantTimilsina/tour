@@ -7,10 +7,38 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 function Login() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+    if (res?.ok) {
+      alert("Login successfull");
+      router.push("/");
+    } else if (res?.status === 400) {
+      alert("Invalid credentials");
+    } else {
+      alert("Server error");
+    }
+  };
+
+  const handleProvider = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    value: "github" | "google"
+  ) => {
+    e.preventDefault();
+    signIn(value, { callbackUrl: "/" });
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to primary-100 flex items-center justify-center ">
       <motion.div
@@ -28,7 +56,7 @@ function Login() {
               Enter your credentials to access your account
             </p>
           </div>
-          <form className="space-y-4 ">
+          <form className="space-y-4 " onSubmit={handleSubmit}>
             <div className="space-y-2 ">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -87,11 +115,19 @@ function Login() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" className="w-full">
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={(e) => handleProvider(e, "github")}
+            >
               <Github className="mr-2 h-4 w-4" />
               Github
             </Button>
-            <Button variant="outline" className="w-full">
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={(e) => handleProvider(e, "google")}
+            >
               <Mail className="mr-2 h-4 w-4" />
               Google
             </Button>
