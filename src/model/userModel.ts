@@ -5,7 +5,7 @@ export interface IUser extends Document {
   email: string;
   password?: string;
   image?: string;
-  provider?: string;
+  provider?: string[];
 }
 const userSchema = new Schema<IUser>(
   {
@@ -23,7 +23,7 @@ const userSchema = new Schema<IUser>(
     password: {
       type: String,
       required: function (this: IUser) {
-        if (this.provider === "credentials") {
+        if (this.provider?.includes("credentials")) {
           return true;
         } else {
           return false;
@@ -31,7 +31,7 @@ const userSchema = new Schema<IUser>(
       },
     },
     image: { type: String, required: false },
-    provider: { type: String, required: true, default: "credentials" },
+    provider: { type: [String], default: [] },
   },
   { timestamps: true }
 );

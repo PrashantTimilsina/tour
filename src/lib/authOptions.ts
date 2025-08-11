@@ -55,8 +55,13 @@ export const authOptions: AuthOptions = {
             name: profile?.name,
             email: profile?.email,
 
-            provider: account?.provider,
+            provider: [account?.provider],
           });
+        } else {
+          if (!existingUser.provider.includes(account.provider)) {
+            existingUser.provider.push(account.provider);
+            await existingUser.save();
+          }
         }
       }
       return true;
