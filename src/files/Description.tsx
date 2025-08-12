@@ -3,7 +3,8 @@
 import { ITour } from "@/model/tourModel";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { toast } from "react-toastify";
 type Props = {
   id: Promise<{ id: string }>;
 };
@@ -23,6 +24,19 @@ function Description({ id }: Props) {
     }
     fetchData();
   }, [id]);
+
+  async function AddtoWishlist() {
+    try {
+      const res = await axios.post(`/api/user/cart/${id}`);
+      const data = res.data;
+      if (data) {
+        toast.success(data.message, { autoClose: 1500 });
+      }
+    } catch (error: unknown) {
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err.response?.data.message, { autoClose: 1500 });
+    }
+  }
 
   return (
     <>
@@ -89,7 +103,10 @@ function Description({ id }: Props) {
             </span>
           </h1>
           <div className="sm:text-xl flex sm:gap-7 mt-7 gap-4">
-            <button className="px-6 py-2 bg-sky-400 text-slate-100 rounded cursor-pointer">
+            <button
+              className="px-6 py-2 bg-sky-400 text-slate-100 rounded cursor-pointer"
+              onClick={AddtoWishlist}
+            >
               Add to Wishlist
             </button>
             <button className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer">

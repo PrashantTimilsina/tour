@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "seedTours.ts"
+    "seedTours.ts",
+    "types"
   ],
   "exclude": ["node_modules"]
 }
