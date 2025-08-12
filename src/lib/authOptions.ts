@@ -77,6 +77,7 @@ export const authOptions: AuthOptions = {
     async session({ session, token }) {
       if (token) {
         session.user = {
+          id: token.id as string,
           name: token?.name,
           email: token?.email,
           image: token?.picture as string,

@@ -7,7 +7,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import CustomSessionProvider from "@/files/SessionProvider";
-
+import { ToastContainer } from "react-toastify";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -52,6 +52,7 @@ export default function RootLayout({
               </main>
             </SidebarProvider>
           </ThemeProvider>
+          <ToastContainer />
         </CustomSessionProvider>
       </body>
     </html>

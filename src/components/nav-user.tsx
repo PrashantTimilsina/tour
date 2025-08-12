@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 export function NavUser({
   user,
@@ -41,6 +42,7 @@ export function NavUser({
   const { isMobile } = useSidebar();
   const handleLogout = async () => {
     await signOut({ redirect: false });
+    toast.success("Logout successful", { autoClose: 1500 });
     router.push("/");
   };
   return (

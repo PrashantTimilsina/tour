@@ -10,6 +10,7 @@ import Link from "next/link";
 import axios, { AxiosError } from "axios";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 function Signup() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -28,14 +29,14 @@ function Signup() {
         password: user.password,
         callbackUrl: "/",
       });
-      alert("User created");
+      toast.success("User created", { autoClose: 1500 });
       router.push("/");
     } catch (error: unknown) {
       const err = error as AxiosError<{ message: string }>;
       if (err.response?.status === 400) {
-        alert("Invalid credentials");
+        toast.error("Invalid credentials", { autoClose: 1500 });
       } else {
-        alert("server error");
+        toast.error("server error", { autoClose: 1500 });
         console.log(err);
       }
     }

@@ -1,4 +1,4 @@
-import { models, model, Schema, Document } from "mongoose";
+import { models, model, Schema, Document, Types } from "mongoose";
 import validator from "validator";
 export interface IUser extends Document {
   name: string;
@@ -6,6 +6,7 @@ export interface IUser extends Document {
   password?: string;
   image?: string;
   provider?: string[];
+  cartItems: Types.ObjectId[];
 }
 const userSchema = new Schema<IUser>(
   {
@@ -30,6 +31,12 @@ const userSchema = new Schema<IUser>(
         }
       },
     },
+    cartItems: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Tour",
+      },
+    ],
     image: { type: String, required: false },
     provider: { type: [String], default: [] },
   },

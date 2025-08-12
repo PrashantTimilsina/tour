@@ -9,6 +9,7 @@ import { Eye, EyeOff, Github, Mail } from "lucide-react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -23,12 +24,12 @@ function Login() {
       redirect: false,
     });
     if (res?.ok) {
-      alert("Login successfull");
+      toast.success("Login successfull", { autoClose: 1500 });
       router.push("/");
     } else if (res?.status === 400) {
-      alert("Invalid credentials");
+      toast.error("Invalid credentials", { autoClose: 1500 });
     } else {
-      alert("Server error");
+      toast.error("Server error", { autoClose: 1500 });
     }
   };
 
