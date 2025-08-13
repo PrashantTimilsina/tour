@@ -66,14 +66,17 @@ export const authOptions: AuthOptions = {
       }
       return true;
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
-        token.id = user.id.toString();
-        token.email = user.email;
-        token.name = user.name;
+        await connect();
+        const dbUser = await User.findOne({ email: user.email });
+        token.id = dbUser?._id.toString();
+        token.email = dbUser?.email;
+        token.name = dbUser?.name;
       }
       return token;
     },
+
     async session({ session, token }) {
       if (token) {
         session.user = {

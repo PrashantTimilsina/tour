@@ -104,12 +104,12 @@ function Description({ id }: Props) {
           </h1>
           <div className="sm:text-xl flex sm:gap-7 mt-7 gap-4">
             <button
-              className="px-6 py-2 bg-sky-400 text-slate-100 rounded cursor-pointer"
+              className="px-6 py-2 bg-sky-400 text-slate-100 rounded cursor-pointer hover:bg-sky-700  transform transition-all duration-150"
               onClick={AddtoWishlist}
             >
               Add to Wishlist
             </button>
-            <button className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer">
+            <button className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer hover:bg-indigo-300 hover:text-slate-800">
               Book tour
             </button>
           </div>
