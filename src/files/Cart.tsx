@@ -5,26 +5,28 @@ import Link from "next/link";
 interface CartProps {
   tourss: ITour[];
   message: string;
+  page: string;
+  removeWishlist: (id: string) => Promise<void>;
 }
-function Cart({ tourss, message }: CartProps) {
+function Cart({ tourss, message, page, removeWishlist }: CartProps) {
   return (
     <div className="p-4">
-      <h1 className="text-2xl text-center sm:pb-5  relative top-0 text-slate-700 pb-2 dark:text-slate-200">
+      <h1 className="relative top-0 pb-2 text-center text-2xl text-slate-700 dark:text-slate-200 sm:pb-5">
         {message}
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {tourss.map((el, i) => (
           <div
             key={i}
-            className="card w-full bg-base-100 shadow-md border border-gray-100 dark:bg-slate-600 dark:border-gray-500"
+            className="card bg-base-100 w-full border border-gray-100 shadow-md dark:border-gray-500 dark:bg-slate-600"
           >
-            <figure className="relative w-full h-64">
+            <figure className="relative h-64 w-full">
               <Image
                 src={el.images?.[0]}
                 alt={el?.name || "Tour image"}
                 fill
-                className="object-cover rounded-t-lg"
+                className="rounded-t-lg object-cover"
               />
             </figure>
             <div className="card-body">
@@ -33,10 +35,22 @@ function Cart({ tourss, message }: CartProps) {
                 {el.description?.slice(0, 100) + " " + "see more..." ||
                   "No description."}
               </p>
-              <div className="card-actions justify-end">
+              <div
+                className={`card-actions justify-end ${
+                  page === "cart" ? "gap-9 mt-2" : ""
+                }`}
+              >
                 <Link href={`/description/${el._id}`}>
                   <button className="btn btn-primary">View Details</button>
                 </Link>
+                {page === "cart" && (
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => removeWishlist(el._id as string)}
+                  >
+                    Remove
+                  </button>
+                )}
               </div>
             </div>
           </div>
