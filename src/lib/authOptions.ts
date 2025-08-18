@@ -73,7 +73,11 @@ export const authOptions: AuthOptions = {
         token.id = dbUser?._id.toString();
         token.email = dbUser?.email;
         token.name = dbUser?.name;
+        if (account) {
+          token.provider = account.provider;
+        }
       }
+
       return token;
     },
 
@@ -84,6 +88,7 @@ export const authOptions: AuthOptions = {
           name: token?.name,
           email: token?.email,
           image: token?.picture as string,
+          provider: token?.provider as string,
         };
       }
       return session;

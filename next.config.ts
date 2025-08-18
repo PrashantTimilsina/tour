@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       "www.pexels.com",
       "lh3.googleusercontent.com",
       "avatars.githubusercontent.com",
+      "cdn.pixabay.com",
     ],
   },
 };
