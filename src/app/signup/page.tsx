@@ -133,12 +133,6 @@ function Signup() {
                 <Checkbox id="remember" />
                 <Label htmlFor="remember">Remember me</Label>
               </div>
-              <a
-                href="#"
-                className="text-sm text-primary-500 hover:text-primary-600"
-              >
-                Forgot password?
-              </a>
             </div>
             <Button type="submit" className="w-full">
               Sign Up
