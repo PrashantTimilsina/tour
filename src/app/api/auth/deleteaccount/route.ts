@@ -4,33 +4,28 @@ import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+export async function DELETE(request: NextRequest) {
   try {
     await connect();
-    const { id } = await request.json();
     const session = await getServerSession(authOptions);
     if (!session) {
-      return NextResponse.json(
-        { message: "Not authorized! Please login" },
-        { status: 401 }
-      );
+      return NextResponse.json({ message: "Not authorized" }, { status: 401 });
     }
-    const userId = session?.user.id;
+    const userId = session?.user?.id;
     const user = await User.findById(userId);
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
-    user.cartItems = user.cartItems.filter(
-      (el: string) => el.toString() !== id
-    );
+    const provider = session?.user?.provider;
+    user.provider = user.provider.filter((el: string) => el !== provider);
+    if (provider === "credentials") {
+      user.password = null;
+    }
     await user.save();
-    return NextResponse.json(
-      { message: "Tour removed from wishlist" },
-      { status: 200 }
-    );
+    return new NextResponse(null, { status: 204 });
   } catch (error) {
     if (error instanceof Error) {
-      return NextResponse.json({ message: error.message }, { status: 400 });
+      return NextResponse.json({ message: error.message }, { status: 500 });
     }
     return NextResponse.json({ message: "Server Error" }, { status: 500 });
   }

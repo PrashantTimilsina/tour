@@ -1,3 +1,4 @@
+import connect from "@/db/db";
 import { authOptions } from "@/lib/authOptions";
 import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
@@ -7,6 +8,7 @@ type Props = {
 };
 export async function POST(request: NextRequest, { params }: Props) {
   try {
+    await connect();
     const { id } = params;
     const session = await getServerSession(authOptions);
 

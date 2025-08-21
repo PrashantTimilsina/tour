@@ -26,7 +26,7 @@ function Login() {
     if (res?.ok) {
       toast.success("Login successfull", { autoClose: 1500 });
       router.push("/");
-    } else if (res?.status === 400) {
+    } else if (res?.status === 400 || res?.status === 401) {
       toast.error("Invalid credentials", { autoClose: 1500 });
     } else {
       toast.error("Server error", { autoClose: 1500 });
@@ -94,14 +94,14 @@ function Login() {
                 <Checkbox id="remember" />
                 <Label htmlFor="remember">Remember me</Label>
               </div>
-              <a
-                href="#"
+              <Link
+                href="/forgotpassword"
                 className="text-sm text-primary-500 hover:text-primary-600"
               >
                 Forgot password?
-              </a>
+              </Link>
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full cursor-pointer">
               Log In
             </Button>
           </form>

@@ -1,11 +1,27 @@
 "use client";
-import { useSession } from "next-auth/react";
+import axios, { AxiosError } from "axios";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { toast } from "react-toastify";
 
 function Profile() {
   const { data: session } = useSession();
+
+  const deleteProvider = async () => {
+    try {
+      await axios.delete("/api/auth/deleteaccount");
+
+      toast.success("User deleted", { autoClose: 1500 });
+
+      signOut({ callbackUrl: "/" });
+    } catch (error) {
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err.response?.data.message, { autoClose: 1500 });
+    }
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#F5F5F5] w-full sm:w-[90%] mx-auto justify-between gap-4 mt-3 p-4 rounded dark:bg-[#1E293B] ">
       <div className="bg-[#FFFFFF] flex flex-col gap-4 items-center justify-center p-4 mt-1 rounded dark:bg-[#283548]">
@@ -47,7 +63,10 @@ function Profile() {
               Change Password
             </button>
           </Link>
-          <button className="bg-red-500 rounded px-6 py-2 cursor-pointer border-none text-white">
+          <button
+            className="bg-red-500 rounded px-6 py-2 cursor-pointer border-none text-white"
+            onClick={deleteProvider}
+          >
             Delete Account
           </button>
         </div>

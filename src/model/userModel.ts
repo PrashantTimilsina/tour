@@ -6,7 +6,9 @@ export interface IUser extends Document {
   password?: string;
   image?: string;
   provider?: string[];
-  cartItems: Types.ObjectId[];
+  cartItems?: Types.ObjectId[];
+  passwordResetToken?: string;
+  passwordResetExpiry?: Date;
 }
 const userSchema = new Schema<IUser>(
   {
@@ -39,6 +41,8 @@ const userSchema = new Schema<IUser>(
     ],
     image: { type: String, required: false },
     provider: { type: [String], default: [] },
+    passwordResetToken: String,
+    passwordResetExpiry: Date,
   },
   { timestamps: true }
 );

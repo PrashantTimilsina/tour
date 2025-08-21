@@ -1,3 +1,4 @@
+import connect from "@/db/db";
 import { authOptions } from "@/lib/authOptions";
 import User from "@/model/userModel";
 import bcrypt from "bcryptjs";
@@ -6,6 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
+    await connect();
     const { currentPassword, newPassword, confirmPassword } =
       await request.json();
     if (!currentPassword || !newPassword || !confirmPassword) {
