@@ -4,7 +4,8 @@ declare module "next-auth" {
   interface Session {
     user: {
       id: string;
-      provider?: string; // ✅ Add id here
+      provider?: string;
+      cloudinaryId?: string; // ✅ Add id here
     } & DefaultSession["user"];
   }
 

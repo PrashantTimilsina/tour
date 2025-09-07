@@ -4,30 +4,22 @@ import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function DELETE(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     await connect();
     const session = await getServerSession(authOptions);
-    if (!session) {
+    const userId = session?.user.id;
+    if (!userId) {
       return NextResponse.json({ message: "Not authorized" }, { status: 401 });
     }
-    const userId = session?.user?.id;
     const user = await User.findById(userId);
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
-    const provider = session?.user?.provider;
-    user.provider = user.provider.filter((el: string) => el !== provider);
-    if (provider === "credentials") {
-      if (user.provider.length === 0) {
-        await User.findByIdAndDelete(userId);
-        return NextResponse.json({ message: "User deleted" }, { status: 200 });
-      } else {
-        user.password = null;
-      }
-    }
-    await user.save();
-    return new NextResponse(null, { status: 204 });
+    return NextResponse.json(
+      { message: "User Information", user },
+      { status: 200 }
+    );
   } catch (error) {
     if (error instanceof Error) {
       return NextResponse.json({ message: error.message }, { status: 500 });

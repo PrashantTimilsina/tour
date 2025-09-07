@@ -4,10 +4,11 @@ export interface IUser extends Document {
   name: string;
   email: string;
   password?: string;
-  image?: string;
+
   provider?: string[];
   cartItems?: Types.ObjectId[];
   passwordResetToken?: string;
+  cloudinaryId?: string;
   passwordResetExpiry?: Date;
 }
 const userSchema = new Schema<IUser>(
@@ -39,7 +40,8 @@ const userSchema = new Schema<IUser>(
         ref: "Tour",
       },
     ],
-    image: { type: String, required: false },
+
+    cloudinaryId: { type: String, required: false },
     provider: { type: [String], default: [] },
     passwordResetToken: String,
     passwordResetExpiry: Date,

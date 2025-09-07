@@ -73,6 +73,8 @@ export const authOptions: AuthOptions = {
         token.id = dbUser?._id.toString();
         token.email = dbUser?.email;
         token.name = dbUser?.name;
+
+        token.cloudinaryId = dbUser?.cloudinaryId;
         if (account) {
           token.provider = account.provider;
         }
@@ -89,6 +91,7 @@ export const authOptions: AuthOptions = {
           email: token?.email,
           image: token?.picture as string,
           provider: token?.provider as string,
+          cloudinaryId: token?.cloudinaryId as string,
         };
       }
       return session;

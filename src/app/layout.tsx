@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import CustomSessionProvider from "@/files/SessionProvider";
 import { ToastContainer } from "react-toastify";
+import { UserProvider } from "@/context/userContext";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -37,22 +39,24 @@ export default function RootLayout({
       <body className="antialiased w-full min-h-screen bg-[#F8FAFC] dark:bg-[#0F172B]">
         {" "}
         <CustomSessionProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <SidebarProvider>
-              <AppSidebar />
-              <main className="w-full min-h-screen">
-                <SidebarTrigger />
-                <ModeToggle />
-                {children}
-              </main>
-            </SidebarProvider>
-          </ThemeProvider>
-          <ToastContainer />
+          <UserProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <SidebarProvider>
+                <AppSidebar />
+                <main className="w-full min-h-screen">
+                  <SidebarTrigger />
+                  <ModeToggle />
+                  {children}
+                </main>
+              </SidebarProvider>
+            </ThemeProvider>
+            <ToastContainer />
+          </UserProvider>
         </CustomSessionProvider>
       </body>
     </html>
