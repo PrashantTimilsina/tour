@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
+import Map from "./Map";
 type Props = {
   id: Promise<{ id: string }>;
 };
@@ -126,6 +127,16 @@ function Description({ id }: Props) {
               {el}
             </span>
           ))}
+        </div>
+        <div className="mt-5">
+          {tour?.latitude !== undefined && tour?.longitude !== undefined && (
+            <Map
+              latitude={tour.latitude}
+              longitude={tour.longitude}
+              name={tour.name}
+              location={tour.location}
+            />
+          )}
         </div>
       </div>
     </>
