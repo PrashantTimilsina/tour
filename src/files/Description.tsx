@@ -6,12 +6,15 @@ import React, { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import Map from "./Map";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 type Props = {
   id: Promise<{ id: string }>;
 };
 function Description({ id }: Props) {
   const [tour, setTour] = useState<ITour | null>(null);
   const [selectedImage, setSelectedImage] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +28,20 @@ function Description({ id }: Props) {
     }
     fetchData();
   }, [id]);
-
+  async function checkBooking(tour: ITour) {
+    try {
+      const res = await axios.get("/api/user/me");
+      const bookings = res.data.user.bookings;
+      if (bookings.some((b: string) => b === tour._id)) {
+        toast.error("Tour already booked", { autoClose: 1500 });
+        return;
+      }
+      router.push(`/payment/${tour._id}?amount=${tour.price}`);
+    } catch (error) {
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err.response?.data.message, { autoClose: 1500 });
+    }
+  }
   async function AddtoWishlist() {
     try {
       const res = await axios.post(`/api/user/cart/${id}`);
@@ -110,9 +126,14 @@ function Description({ id }: Props) {
             >
               Add to Wishlist
             </button>
-            <button className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer hover:bg-indigo-300 hover:text-slate-800">
+            {/* <Link href={`/payment/${tour?._id}?amount=${tour?.price}`}> */}
+            <button
+              className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer hover:bg-indigo-300 hover:text-slate-800"
+              onClick={() => checkBooking(tour)}
+            >
               Book tour
             </button>
+            {/* </Link> */}
           </div>
         </div>
       </div>

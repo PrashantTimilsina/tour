@@ -6,7 +6,7 @@ interface CartProps {
   tourss: ITour[];
   message: string;
   page: string;
-  removeWishlist: (id: string) => Promise<void>;
+  removeWishlist?: (id: string) => Promise<void>;
 }
 function Cart({ tourss, message, page, removeWishlist }: CartProps) {
   return (

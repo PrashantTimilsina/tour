@@ -7,6 +7,7 @@ export interface IUser extends Document {
 
   provider?: string[];
   cartItems?: Types.ObjectId[];
+  bookings?: Types.ObjectId[];
   passwordResetToken?: string;
   cloudinaryId?: string;
   passwordResetExpiry?: Date;
@@ -40,6 +41,7 @@ const userSchema = new Schema<IUser>(
         ref: "Tour",
       },
     ],
+    bookings: [{ type: Schema.Types.ObjectId, ref: "Tour" }],
 
     cloudinaryId: { type: String, required: false },
     provider: { type: [String], default: [] },
