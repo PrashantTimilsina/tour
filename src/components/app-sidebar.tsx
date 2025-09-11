@@ -75,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const projects = [
     {
       name: "Popular Destinations",
-      url: "/popular",
+      url: "/populardestination",
       icon: Map,
     },
     {
