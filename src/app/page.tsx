@@ -1,12 +1,17 @@
-import React from "react";
 import TourCart from "@/files/TourCart";
+import PaginationBtn from "@/files/PaginationBtn";
 
-function App() {
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const page = Number(searchParams.page) || 1;
+
   return (
     <div>
-      <TourCart />
+      <TourCart page={page} />
+      <PaginationBtn />
     </div>
   );
 }
-
-export default App;
