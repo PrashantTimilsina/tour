@@ -33,6 +33,7 @@ export const UserContext = createContext<UserContextType>({
 
 const UserProvider = ({ children }: UserProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
+  
 
   const fetchUser = async () => {
     try {
