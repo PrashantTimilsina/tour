@@ -2,7 +2,7 @@ import { getAllTour } from "@/lib/TourData";
 import Cart from "./Cart";
 
 export default async function TourCart({ page }: { page: number }) {
-  const { tours } = await getAllTour(page, 5);
+  const { tours } = await getAllTour(page, 13);
 
   return (
     <Cart

@@ -18,7 +18,7 @@ import Tour, { ITour } from "@/model/tourModel";
 // Paginated fetch
 export async function getAllTour(
   page: number = 1,
-  limit: number = 5
+  limit: number = 13
 ): Promise<{
   tours: ITour[];
   total: number;
