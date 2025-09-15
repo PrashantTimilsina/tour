@@ -14,7 +14,7 @@ export async function POST(request: NextRequest, { params }: Props) {
 
     if (!session) {
       return NextResponse.json(
-        { message: "Not authenticated" },
+        { message: "Not authorized! Please login" },
         { status: 401 }
       );
     }
