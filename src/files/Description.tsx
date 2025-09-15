@@ -7,6 +7,7 @@ import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import Map from "./Map";
 import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 type Props = {
   id: Promise<{ id: string }>;
@@ -103,8 +104,14 @@ function Description({ id }: Props) {
             <h3 className="text-xl dark:text-slate-200 mt-5">
               Duration: {tour?.duration}
             </h3>
-            <h3 className="text-xl dark:text-slate-200 mt-5">
+
+            <h3 className="text-xl dark:text-slate-200 mt-5 flex sm:gap-3">
               Guide: {tour?.guideName}
+              <Link href="https://www.facebook.com/profile.php?id=61578269964686">
+                <button className="text-center cursor-pointer text-xl hover:text-blue-600 hover:bg-white hover:rounded-full">
+                  <FaFacebook />
+                </button>
+              </Link>
             </h3>
           </div>
           <h3 className="text-xl dark:text-slate-200 mt-5">
