@@ -96,12 +96,12 @@ function Payment() {
         <input
           type="hidden"
           name="success_url"
-          value={`http://localhost:3000/success/${id}`}
+          value={`https://tour-virid-two.vercel.app/success/${id}`}
         />
         <input
           type="hidden"
           name="failure_url"
-          value="http://localhost:3000/failure"
+          value="https://tour-virid-two.vercel.app/failure"
         />
         <input
           type="hidden"
