@@ -10,7 +10,7 @@ import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 type Props = {
-  id: Promise<{ id: string }>;
+  id: string;
 };
 function Description({ id }: Props) {
   const [tour, setTour] = useState<ITour | null>(null);
@@ -136,7 +136,7 @@ function Description({ id }: Props) {
             {/* <Link href={`/payment/${tour?._id}?amount=${tour?.price}`}> */}
             <button
               className="px-6 py-2 bg-indigo-500 text-slate-50 rounded cursor-pointer hover:bg-indigo-300 hover:text-slate-800"
-              onClick={() => checkBooking(tour)}
+              onClick={() => tour && checkBooking(tour)}
             >
               Book tour
             </button>

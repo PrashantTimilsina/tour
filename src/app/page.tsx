@@ -1,12 +1,13 @@
 import TourCart from "@/files/TourCart";
 import PaginationBtn from "@/files/PaginationBtn";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const page = Number(searchParams.page) || 1;
+  const { page: pageParam } = await searchParams;
+  const page = Number(pageParam) || 1;
 
   return (
     <div>

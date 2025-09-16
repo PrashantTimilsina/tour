@@ -2,9 +2,9 @@ import connect from "@/db/db";
 import { authOptions } from "@/lib/authOptions";
 import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     await connect();
     const session = await getServerSession(authOptions);
