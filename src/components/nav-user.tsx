@@ -30,10 +30,12 @@ export function NavUser({
     avatar: string;
   };
 }) {
+  const { update } = useSession();
   const router = useRouter();
   const { isMobile } = useSidebar();
   const handleLogout = async () => {
     await signOut({ redirect: false });
+    await update();
     toast.success("Logout successful", { autoClose: 1500 });
     router.push("/");
   };
