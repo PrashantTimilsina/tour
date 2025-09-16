@@ -1,5 +1,6 @@
 import Tour from "@/model/tourModel";
 import { NextRequest, NextResponse } from "next/server";
+import connect from "@/db/db";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -7,6 +8,7 @@ type Props = {
 
 export async function GET(request: NextRequest, context: Props) {
   try {
+    await connect();
     const params = await context.params; // await params here
     const tour = await Tour.findById(params.id).lean();
     return NextResponse.json(tour);
