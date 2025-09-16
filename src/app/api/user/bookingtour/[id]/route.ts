@@ -1,25 +1,81 @@
+// import connect from "@/db/db";
+// import { authOptions } from "@/lib/authOptions";
+// import User from "@/model/userModel";
+// import { getServerSession } from "next-auth";
+// import { NextRequest, NextResponse } from "next/server";
+// type Props = {
+//   params: { id: string };
+// };
+// export async function POST(request: NextRequest, { params }: Props) {
+//   try {
+//     await connect();
+//     const { id } = params;
+//     const session = await getServerSession(authOptions);
+//     const userId = session?.user.id;
+//     if (!userId) {
+//       return NextResponse.json({ message: "Not authorized" }, { status: 401 });
+//     }
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return NextResponse.json({ message: "User not found" }, { status: 404 });
+//     }
+//     if (user.bookings.map((b: string) => b.toString()).includes(id)) {
+//       return NextResponse.json(
+//         { message: "Booking already done!!" },
+//         { status: 409 }
+//       );
+//     }
+
+//     user.bookings.push(id);
+//     await user.save();
+//     return NextResponse.json(
+//       { message: "Booking successfull" },
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       return NextResponse.json({ message: error.message }, { status: 500 });
+//     }
+//     return NextResponse.json({ message: "Server Error" }, { status: 500 });
+//   }
+// }
 import connect from "@/db/db";
 import { authOptions } from "@/lib/authOptions";
 import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-type Props = {
-  params: { id: string };
+import { ObjectId } from "mongodb";
+
+// Updated type definition for Next.js 15
+type ContextType = {
+  params: Promise<{
+    id: string;
+  }>;
 };
-export async function POST(request: NextRequest, { params }: Props) {
+
+export async function POST(request: NextRequest, context: ContextType) {
   try {
     await connect();
-    const { id } = params;
+
+    // Await the params since they're now a Promise in Next.js 15
+    const { id } = await context.params;
+
     const session = await getServerSession(authOptions);
-    const userId = session?.user.id;
+    const userId = session?.user?.id;
+
     if (!userId) {
       return NextResponse.json({ message: "Not authorized" }, { status: 401 });
     }
+
     const user = await User.findById(userId);
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
-    if (user.bookings.map((b: string) => b.toString()).includes(id)) {
+
+    // Ensure proper typing for bookings
+    if (
+      user.bookings.map((b: string | ObjectId) => b.toString()).includes(id)
+    ) {
       return NextResponse.json(
         { message: "Booking already done!!" },
         { status: 409 }
@@ -28,8 +84,9 @@ export async function POST(request: NextRequest, { params }: Props) {
 
     user.bookings.push(id);
     await user.save();
+
     return NextResponse.json(
-      { message: "Booking successfull" },
+      { message: "Booking successful" },
       { status: 200 }
     );
   } catch (error) {

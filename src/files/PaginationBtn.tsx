@@ -8,6 +8,7 @@ export default function PaginationBtn() {
 
   const goToPage = (num: number) => {
     router.push(`/?page=${num}`);
+    window.scrollTo(0, 0);
   };
 
   return (

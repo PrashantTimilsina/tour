@@ -23,7 +23,7 @@ function Cart({ tourss, message, page, removeWishlist }: CartProps) {
           >
             <figure className="relative h-64 w-full">
               <Image
-                src={el.images?.[0]}
+                src={el.images?.[0] || ""}
                 alt={el?.name || "Tour image"}
                 fill
                 className="rounded-t-lg object-cover"
@@ -46,7 +46,7 @@ function Cart({ tourss, message, page, removeWishlist }: CartProps) {
                 {page === "cart" && (
                   <button
                     className="btn btn-primary"
-                    onClick={() => removeWishlist(el._id as string)}
+                    onClick={() => removeWishlist?.(el._id as string)}
                   >
                     Remove
                   </button>

@@ -3,13 +3,17 @@ import { authOptions } from "@/lib/authOptions";
 import User from "@/model/userModel";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
+
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
+
 export async function POST(request: NextRequest, { params }: Props) {
   try {
     await connect();
-    const { id } = params;
+
+    const { id } = await params;
+
     const session = await getServerSession(authOptions);
 
     if (!session) {
