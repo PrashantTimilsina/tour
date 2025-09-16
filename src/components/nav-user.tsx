@@ -34,12 +34,11 @@ export function NavUser({
   const router = useRouter();
   const { isMobile } = useSidebar();
   const handleLogout = async () => {
-    await signOut({ redirect: true, callbackUrl: "/" });
+    await signOut({ redirect: false });
     await update();
     toast.success("Logout successful", { autoClose: 1500 });
-    // router.push("/");
-     router.replace("/"); 
-  router.refresh();
+    router.push("/");
+     window.location.reload()
   };
   return (
     <SidebarMenu>
