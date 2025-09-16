@@ -96,12 +96,12 @@ function Payment() {
         <input
           type="hidden"
           name="success_url"
-          value={`https://tour-virid-two.vercel.app/success/${id}`}
+          value={`${process.env.NEXTAUTH_URL}/success/${id}`}
         />
         <input
           type="hidden"
           name="failure_url"
-          value="https://tour-virid-two.vercel.app/failure"
+          value={`${process.env.NEXTAUTH_URL}/failure`}
         />
         <input
           type="hidden"
