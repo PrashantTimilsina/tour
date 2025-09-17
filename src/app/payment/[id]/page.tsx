@@ -101,7 +101,7 @@ function Payment() {
         <input
           type="hidden"
           name="failure_url"
-          value=`${process.env.NEXT_PUBLIC_BASE_URL}/failure`}
+          value={`${process.env.NEXT_PUBLIC_BASE_URL}/failure`}
         />
         <input
           type="hidden"
