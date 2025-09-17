@@ -19,7 +19,7 @@ function Cart({ tourss, message, page, removeWishlist }: CartProps) {
         {tourss.map((el, i) => (
           <div
             key={i}
-            className="card bg-base-100 w-full border border-gray-100 shadow-md dark:border-gray-500 dark:bg-slate-600"
+            className="card bg-white w-full border border-gray-100 shadow-md dark:border-gray-500 dark:bg-slate-600"
           >
             <figure className="relative h-64 w-full">
               <Image
