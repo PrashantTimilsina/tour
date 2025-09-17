@@ -17,7 +17,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { signOut } from "next-auth/react";
+import { signOut,useSession  } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -30,12 +30,15 @@ export function NavUser({
     avatar: string;
   };
 }) {
+  const { update } = useSession();
   const router = useRouter();
   const { isMobile } = useSidebar();
   const handleLogout = async () => {
-    await signOut({ redirect: false });
+    await signOut({ redirect: true, callbackUrl: "/" });
+    await update();
     toast.success("Logout successful", { autoClose: 1500 });
     router.push("/");
+    
   };
   return (
     <SidebarMenu>
