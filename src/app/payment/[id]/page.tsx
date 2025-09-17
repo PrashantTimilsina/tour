@@ -96,12 +96,12 @@ function Payment() {
         <input
           type="hidden"
           name="success_url"
-          value={`https://tour-gules-delta.vercel.app/success/${id}`}
+          value={`${process.env.NEXT_PUBLIC_BASE_URL}/success/${id}`}
         />
         <input
           type="hidden"
           name="failure_url"
-          value="https://tour-gules-delta.vercel.app/failure"
+          value=`${process.env.NEXT_PUBLIC_BASE_URL}/failure`}
         />
         <input
           type="hidden"
