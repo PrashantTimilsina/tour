@@ -96,12 +96,12 @@ function Payment() {
         <input
           type="hidden"
           name="success_url"
-          value={`http://localhost:3000/success/${id}`}
+          value={`${process.env.NEXT_PUBLIC_BASE_URL}/success/${id}`}
         />
         <input
           type="hidden"
           name="failure_url"
-          value="http://localhost:3000/failure"
+          value={`${process.env.NEXT_PUBLIC_BASE_URL}/failure`}
         />
         <input
           type="hidden"
